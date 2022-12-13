@@ -4,6 +4,8 @@ import { Register } from "../components/auth/Register"
 import { Authorized } from "./Authorized"
 import { JerseyList } from "../components/jerseys/Jerseys"
 import { CreateJersey } from "../components/jerseys/CreateJersey"
+import { JerseyUpdate } from "../components/jerseys/JerseyUpdate"
+import { MyJerseys } from "../components/jerseys/MyJerseys"
 
 
 
@@ -14,8 +16,9 @@ export const ApplicationViews = () => {
             <Route path="/register" element={<Register />} />
             <Route path="/" element={<JerseyList />} />
             <Route path="/create" element={<CreateJersey />} />
+            <Route path="/collections" element={<MyJerseys />} />
             <Route element={<Authorized />}>
-
+                <Route path="/:jerseyId/edit" element={<JerseyUpdate />} />
 
             </Route>
         </Routes>

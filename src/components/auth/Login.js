@@ -19,6 +19,7 @@ export const Login = () => {
             .then(res => {
                 if ("valid" in res && res.valid && "token" in res) {
                     localStorage.setItem("d_token", res.token)
+                    localStorage.setItem("user", JSON.stringify(res))
                     navigate("/")
                 }
                 else {

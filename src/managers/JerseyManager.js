@@ -25,13 +25,23 @@ export const getSingleJersey = (id) => {
     })
         .then(response => response.json())
 }
-export const DeleteEvent = (id) => {
+export const DeleteJersey = (id) => {
     return fetch(`http://localhost:8000/jerseyPosts/${id}`, {
         method: "DELETE",
         headers: {
             "Authorization": `Token ${localStorage.getItem("d_token")}`,
 
         }
+    })
+}
+export const UpdateJersey = (id, updatedJersey) => {
+    return fetch(`http://localhost:8000/jerseyPosts/${id}`, {
+        method: "PUT",
+        headers: {
+            "Authorization": `Token ${localStorage.getItem("d_token")}`,
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(updatedJersey)
     })
 }
 

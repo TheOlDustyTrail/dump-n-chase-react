@@ -1,11 +1,11 @@
 import { useState } from "react"
-import { useNavigate } from "react-router-dom"
-import { createJersey } from "../../managers/JerseyManager"
+import { useNavigate, useParams } from "react-router-dom"
+import { UpdateJersey } from "../../managers/JerseyManager"
 
 
-export const CreateJersey = () => {
+export const JerseyUpdate = () => {
     const navigate = useNavigate()
-
+    const { jerseyId } = useParams()
     const [currentJersey, setCurrentJersey] = useState({
         description: "",
         photo: "",
@@ -24,7 +24,7 @@ export const CreateJersey = () => {
 
     return (
         <form className="gameForm">
-            <h2 className="gameForm__title">Create A Jersey</h2>
+            <h2 className="gameForm__title">Update Jersey</h2>
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="title">Description: </label>
@@ -75,7 +75,7 @@ export const CreateJersey = () => {
                     }
 
                     // Send POST request to your API
-                    createJersey(event)
+                    UpdateJersey(jerseyId, event)
                         .then(() => navigate("/"))
                 }}
                 className="btn btn-primary">Create</button>
