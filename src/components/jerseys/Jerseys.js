@@ -26,11 +26,14 @@ export const JerseyList = () => {
                     <p>Team: {jersey.team.name}</p>
 
                     <button onClick={() => navigate(`${jersey.id}/edit`)} >Update Jersey</button>
+                    <button onClick={() => navigate(`${jersey.id}/comments`)} >Add a Comment </button>
 
                     {localSweaterUser.staff
 
-                        ? <button onClick={() => DeleteJersey(jersey.id)} >Remove Jersey</button>
-                        : "Else"
+                        ? <button onClick={() => DeleteJersey(jersey.id).then(() => {
+                            window.location.reload(false);
+                        })} >Remove Jersey</button>
+                        : ""
                     }
                     <button onClick={evt => {
                         // Prevent form from being submitted

@@ -6,6 +6,7 @@ import { JerseyList } from "../components/jerseys/Jerseys"
 import { CreateJersey } from "../components/jerseys/CreateJersey"
 import { JerseyUpdate } from "../components/jerseys/JerseyUpdate"
 import { MyJerseys } from "../components/jerseys/MyJerseys"
+import { CreateComment } from "../components/jerseys/JerseyComments"
 
 
 
@@ -19,6 +20,7 @@ export const ApplicationViews = () => {
             <Route path="/collections" element={<MyJerseys />} />
             <Route element={<Authorized />}>
                 <Route path="/:jerseyId/edit" element={<JerseyUpdate />} />
+                <Route path="/:jerseyId/comments" element={< CreateComment />} />
 
             </Route>
         </Routes>
