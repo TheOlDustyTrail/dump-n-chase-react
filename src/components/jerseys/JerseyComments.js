@@ -32,10 +32,7 @@ export const CreateComment = () => {
     return (
         <form className="gameForm">
             <h2 className="gameForm__title">Add A comment</h2>
-            <h3>Comments:</h3>
-            {comments.map((comment) => (
-                <p>{comment.comment} </p>
-            ))}
+
 
             <fieldset>
                 <div className="form-group">
@@ -49,7 +46,6 @@ export const CreateComment = () => {
 
             <button type="submit"
                 onClick={evt => {
-                    // Prevent form from being submitted
                     evt.preventDefault()
 
                     const event = {
@@ -58,7 +54,6 @@ export const CreateComment = () => {
                         jersey: jerseyId
                     }
 
-                    // Send POST request to your API
                     createComment(event)
                         .then(() => navigate("/"))
                 }}
