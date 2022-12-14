@@ -63,7 +63,6 @@ export const JerseyUpdate = () => {
             </fieldset>
             <button type="submit"
                 onClick={evt => {
-                    // Prevent form from being submitted
                     evt.preventDefault()
 
                     const event = {
@@ -74,7 +73,6 @@ export const JerseyUpdate = () => {
                         team: parseInt(currentJersey.team)
                     }
 
-                    // Send POST request to your API
                     UpdateJersey(jerseyId, event)
                         .then(() => navigate("/"))
                 }}
