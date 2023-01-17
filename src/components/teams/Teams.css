@@ -1,0 +1,29 @@
+.logoContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+
+
+}
+
+
+.logo {
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+    background-clip: padding-box;
+    border: 5px solid blanchedalmond;
+}
+
+.teams1 {
+    width: 100%;
+    height: 4000px;
+    background-color: blanchedalmond;
+}
+
+.teams {
+    width: 100%;
+    height: 1000px;
+    background-color: blanchedalmond;
+}

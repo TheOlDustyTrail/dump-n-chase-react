@@ -1,0 +1,13 @@
+.navLink {
+    color: white;
+
+}
+
+.Nav {
+    position: relative;
+    z-index: 2
+}
+
+.navLink:hover {
+    color: rgb(197, 25, 25)
+}

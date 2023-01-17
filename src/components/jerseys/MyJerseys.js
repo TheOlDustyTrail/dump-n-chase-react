@@ -1,12 +1,14 @@
-import { Button } from "bootstrap"
+import { Button } from 'react-bootstrap';
 import React, { useEffect, useState } from "react"
 import { useLocation, useNavigate } from "react-router-dom"
 import { DeleteJersey, getJersey } from "../../managers/JerseyManager"
 import { DeleteLike, getLikes } from "../../managers/LikesManager"
+import { getTeams } from "../../managers/TeamsManager"
 
 
 export const MyJerseys = () => {
     const [Likes, setLikes] = useState([])
+    const [teams, setTeams] = useState([])
     const navigate = useNavigate()
     const location = useLocation()
 
@@ -14,27 +16,41 @@ export const MyJerseys = () => {
         getLikes().then(data => setLikes(data))
     }, [])
 
+    useEffect(() => {
+        getTeams().then(data => setTeams(data))
+    }, [])
+
 
     return (<>
-        <h1>Collections </h1>
-        {
+        <section className='jerseyPage'>
+            <h1>Collections </h1>
+
+            {
 
 
-            Likes.map(like => {
+                Likes.map(like => {
 
 
-                return <div key={like.id}>
-                    <img src={like.jersey.photo} />
-                    <p>Year: {like.jersey.year}</p>
-                    <p>Description: {like.jersey.description}</p>
-                    <p>Team: {like.jersey.team.name}</p>
+                    return <div key={like.id}>
+                        <section className="postContainer">
+                            <img src={like.jersey.photo} className="jerseyPhoto" />
+                            <p className="jerseyCaption">Year: {like.jersey.year}</p>
+                            <p className="jerseyCaption">Description: {like.jersey.description}</p>
+                            <p className="jerseyCaption">Team: {
+                                teams.map(team =>
+                                    like.jersey.team === team.id
+                                        ? <>{team.name}</>
+                                        : ""
+                                )}</p>
 
-                    <button onClick={() => DeleteLike(like.id).then(() => {
-                        window.location.reload(false);
-                    })} >Remove Jersey</button>
-                </div>
-            })
+                            <Button variant="outline-danger" onClick={() => DeleteLike(like.id).then(() => {
+                                window.location.reload(false);
+                            })} >Remove Jersey</Button>
+                        </section>
 
-        }
-    </>)
+                    </div>
+                })
+
+            }
+        </section> </>)
 }

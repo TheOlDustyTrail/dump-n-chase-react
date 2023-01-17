@@ -1,0 +1,53 @@
+#JerseyForm {
+    width: 100%;
+    height: 1000px;
+    background-color: blanchedalmond;
+
+
+}
+
+.form-container {
+    width: 500px;
+    height: auto;
+    background-color: rgba(253, 250, 250, 0.5);
+    padding: 10px;
+    border: 1px solid #CCC;
+    margin: auto;
+    text-align: left;
+    border-radius: 10px;
+    font-weight: bold;
+
+
+
+}
+
+.form-control-create,
+#form-button {
+
+    margin: 25px;
+
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+#team {
+    width: 76%
+}
+
+#year {
+    width: 77%
+}
+
+#description {
+    width: 65%
+}
+
+#file {
+    text-align: center;
+    margin-left: 15%;
+}
