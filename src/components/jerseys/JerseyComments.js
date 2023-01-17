@@ -30,7 +30,7 @@ export const CreateComment = () => {
     }
 
     return (
-        <form className="gameForm">
+        <form className="commentForm">
             <h2 className="gameForm__title">Add A comment</h2>
 
 

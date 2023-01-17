@@ -1,0 +1,69 @@
+.allComments {
+    width: 500px;
+    height: auto;
+    background-color: rgba(253, 250, 250, 0.5);
+    padding: 10px;
+    border: 1px solid #CCC;
+}
+
+.comment {
+    width: 100%;
+    height: auto;
+    background-color: rgba(253, 250, 250, 0.5);
+    padding: 10px;
+    border: 1px solid #CCC;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #333;
+
+
+}
+
+.postContainer {
+    width: 500px;
+    height: auto;
+    background-color: rgba(253, 250, 250, 0.5);
+    padding: 10px;
+    border: 1px solid #CCC;
+
+}
+
+.jerseyPhoto {
+    width: 100%;
+    height: auto;
+    opacity: 0.9;
+    border-radius: 10px;
+}
+
+.jerseyCaption {
+    width: 100%;
+    height: auto;
+    background-color: rgba(253, 250, 250, 0.5);
+    padding: 10px;
+    border: 1px solid #CCC;
+    border-radius: 5px;
+    margin-top: 10px;
+    color: #333;
+}
+
+.allComments,
+.comment,
+.postContainer,
+.jerseyPhoto,
+.jerseyCaption,
+h1 {
+    margin: 0 auto;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.jerseyPage {
+    background-color: blanchedalmond;
+
+}
+
+.commentForm {
+    background-color: blanchedalmond;
+    height: 1000px;
+}

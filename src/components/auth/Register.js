@@ -1,8 +1,8 @@
 import React, { useRef } from "react"
 import { Link, useNavigate } from "react-router-dom"
 import { registerUser } from "../../managers/AuthManager"
-
-
+import { Button } from 'react-bootstrap';
+import './login.css';
 export const Register = () => {
     const firstName = useRef()
     const lastName = useRef()
@@ -28,6 +28,7 @@ export const Register = () => {
                 .then(res => {
                     if ("token" in res) {
                         localStorage.setItem("d_token", res.token)
+                        localStorage.setItem("user", JSON.stringify(res))
                         navigate("/")
                     }
                 })
@@ -37,7 +38,10 @@ export const Register = () => {
     }
 
     return (
-        <main style={{ textAlign: "center" }}>
+        <main >
+            <div id="video-bg">
+                <iframe src="https://www.youtube.com/embed/GkdyKGiBhAQ?autoplay=1&mute=1&controls=0&rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
 
             <dialog className="dialog dialog--password" ref={passwordDialog}>
                 <div>Passwords do not match</div>
@@ -67,15 +71,14 @@ export const Register = () => {
                     <input ref={verifyPassword} type="password" name="verifyPassword" className="form-control" placeholder="Verify password" required />
                 </fieldset>
 
-                <fieldset style={{
-                    textAlign: "center"
-                }}>
-                    <button className="btn btn-1 btn-sep icon-send" type="submit">Register</button>
+                <fieldset >
+                    <Button id="register-button" className="btn btn-1 btn-sep icon-send" type="submit">Register</Button>
                 </fieldset>
             </form>
             <section className="link--register">
                 Already registered? <Link to="/login">Login</Link>
             </section>
+
         </main>
     )
 }
